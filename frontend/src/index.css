@@ -1,0 +1,274 @@
+/** @format */
+
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background-color: #f9f5eb;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #000;
+}
+
+p {
+  line-height: 1.7;
+  color: #555;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  line-height: 2.2;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 60px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header ul li {
+  margin-left: 20px;
+}
+
+.header ul li a {
+  display: flex;
+  align-items: center;
+  color: #555;
+}
+
+.header ul li a:hover {
+  color: #000;
+}
+
+.header ul li a svg {
+  margin-right: 5px;
+}
+
+/* Heading Styles */
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.heading p {
+  color: #828282;
+  font-size: 1.2rem;
+}
+
+/* Goals Styles */
+.goals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 20px;
+}
+
+/* Refinement of the .goal card */
+.goal {
+  background-color: #f8f8f8;
+  padding: 40px;
+  position: relative;
+  border-radius: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  /* Fancy Gradient Background */
+  background-image: linear-gradient(135deg, #f8f8f8, #ffffff);
+}
+
+/* Hover effects for the .goal card */
+.goal:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient overlay for the .goal card */
+.goal:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background-image: radial-gradient(
+    ellipse closest-side,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  border-radius: 40px;
+}
+
+/* Close button style */
+.goal .close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #aaa;
+  font-size: 28px;
+  transition: color 0.4s ease;
+}
+
+/* Hover effect for the close button */
+.goal .close:hover {
+  color: #666;
+}
+
+/* Form and Content Styles */
+.form,
+.content {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e6e6e6;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: inherit;
+}
+
+.form-group label {
+  text-align: left;
+  display: block;
+  margin: 0 0 10px 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Button Styles */
+.btn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #4b0082, #8a2be2);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-reverse {
+  background: #fff;
+  color: #4b0082;
+}
+
+.btn-block {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.btn:hover {
+  transform: scale(0.95);
+  background: linear-gradient(45deg, #8a2be2, #4b0082);
+}
+
+/* Loading Spinner Styles */
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #4b0082 transparent #8a2be2 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+/* Keyframes for Spinner Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+  .form,
+  .content {
+    width: 90%;
+  }
+
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .heading p {
+    font-size: 1rem;
+  }
+}
